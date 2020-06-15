@@ -1,0 +1,295 @@
+.Modal{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 50px;
+	background-color: rgba(0,0,0,.8);
+	overflow-y: auto;
+	z-index: 99999;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .2s;
+}
+
+.Modal.active{
+	opacity: 1;
+	visibility: visible;
+}
+
+.Modal .ModalBox{
+	width: 580px;
+	height: auto;
+	margin: 0 calc(50% - 355px);
+	padding: 15px 10px;
+	position: relative;
+	background-color: #FFF;
+	border-radius: 5px;
+	float: left;
+	border: 1px solid #111;
+	box-shadow: 0 3px 0 black !important;
+}
+
+.Modal .ModalBox.ModalBoxBig{ width: 750px; margin: 0 calc(50% - 375px); }
+.Modal .ModalBox.ModalBoxSmall{ width: 350px; margin: 0 calc(50% - 175px); }
+
+.Modal .ModalExit,
+.Modal .ModalBox .ModalExit{
+	width: 14px;
+	height: 13px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background-image: url('../img/icon-cancel.gif');
+	border-radius: 2px;
+	font-size: 10px;
+	font-weight: 500;
+	color: #BBB;
+	border: none;
+	cursor: pointer;
+	float: right;
+}
+
+.Modal .ModalExit{
+	width: 23px;
+	height: 23px;
+	background-color: #FFF;
+	z-index: 9;
+}
+
+.Modal .ModalBox .ModalTitle{
+	width: calc(100% - 36px);
+	height: auto;
+	margin: 0 18px;
+	padding-bottom: 8px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 600;
+	color: #444;
+	float: left;
+}
+
+.Modal .ModalBox .ModalTitle:before{
+	width: 30px;
+	height: 0;
+	position: absolute;
+	bottom: -1px;
+	left: calc(50% - 15px);
+	border-bottom: 1px dashed rgba(0,0,0,.1);
+	content: '';
+}
+
+.Modal .ModalBox .ModalContent{
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+	font-size: 13px;
+	color: #444;
+	float: left;
+}
+
+.Modal .ModalBox .ModalContent p.forgot{
+	margin-bottom: 10px;
+	text-align: right;
+	font-size: 11px;
+	color: #FFF;
+	cursor: pointer;
+}
+
+.Modal .ModalBox .ModalContent div.input,
+.Modal .ModalBox .ModalContent input,
+.Modal .ModalBox .ModalContent select,
+.Modal .ModalBox .ModalContent textarea{
+	width: 100%;
+	height: 45px;
+	padding: 0 10px;
+	margin-bottom: 10px;
+	border: none;
+	outline: none;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 2px 2px rgba(0,0,0,.05);
+	border-radius: 2px;
+	font-size: 11px;
+	line-height: 45px;
+	float: left;
+}
+
+.Modal .ModalBox .ModalContent textarea{
+	height: 100px;
+	min-width: 100%;
+	min-height: 100px;
+	max-width: 100%;
+	max-height: 200px;
+	padding: 10px;
+	line-height: initial;
+}
+
+.Modal .ModalBox .ModalContent label.ModalPicture{
+	width: 110px;
+	height: 110px;
+	margin: 0 calc(50% - 55px);
+	margin-bottom: 10px;
+	background-image: url('../../uploads/padrao.png');
+	background-color: #F4F4F4;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+	float: left;
+	cursor: pointer;
+}
+
+.Modal .ModalBox .ModalContent label.ModalPicture::before{
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.8));
+	border-radius: 50%;
+	text-align: center;
+	font-size: 11px;
+	font-weight: 500;
+	color: #FFF;
+	line-height: 110px;
+	content: 'Selecione';
+	float: left;
+	opacity: 0.9;
+	transition: opacity .2s;
+}
+
+.Modal#profileConfig .ModalBox .ModalContent label.ModalPicture{ width: 400px; margin: 0 calc(50% - 200px); margin-bottom: 10px; border-radius: 3px; }
+.Modal#profileConfig .ModalBox .ModalContent label.ModalPicture::before{ border-radius: 3px; }
+
+.Modal .ModalBox .ModalContent .box{
+	height: 50px;
+	border-radius: 3px;
+	position: relative;
+	background-color: #dc3b27;
+	box-shadow: 0 0 0 1px #c02f1f, inset 0 3px 0 rgb(230,109,96);
+	font-size: 12px;
+	font-weight: 500;
+	padding: 9px 10px;
+	color: #fff;
+	float: left;
+}
+
+.Modal .ModalBox .ModalContent .box .data {
+	width: 100%;
+	height: 22px;
+	left: 0;
+	bottom: 0;
+	border-radius: 0 0 3px 3px;
+	position: absolute;
+	background-color: #F9F9F9;
+	box-shadow: inset 0 -2px 0 #E4E4E4;
+	font-size: 11px;
+	font-weight: 300;
+	padding: 4px 10px;
+	color: #C3C3C3;
+}
+
+.Modal .ModalBox .ModalContent [ModalAreaChange]{
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+	float: left;
+	display: none;
+}
+
+.Modal .ModalBox .ModalContent button[type="submit"]{
+	width: auto;
+	height: 40px;
+	padding: 0 10px;
+	background-color: #DC3B27;
+	box-shadow: 0 1px 1px rgba(0,0,0,.2);
+	border-radius: 2px;
+	font-size: 11px;
+	font-weight: 600;
+	color: #FFF;
+	float: left;
+}
+
+.Modal .ModalContent.bc3 .box{ width: calc((100% - 16px) / 3); margin: 8px 8px 0 0; }
+.Modal .ModalContent.bc3 .box:nth-child(3n+3){ margin-right: 0; }
+.Modal .ModalContent.bc3 .box:nth-child(1),
+.Modal .ModalContent.bc3 .box:nth-child(2),
+.Modal .ModalContent.bc3 .box:nth-child(3){
+	margin-top: 0;
+}
+
+.Modal.Bg{
+	background-color: lightblue !important;
+	/* background: url('../img/fundoModal.png'); */
+	background-position: 0 90%;
+}
+.Modal.Bg .ModalBox{ background-color: transparent; }
+.Modal.Bg .ModalBox .ModalTitle{ padding-bottom: 8px; font-size: 20px; color: #FFF; }
+.Modal.Bg .ModalBox .ModalTitle:before{ border-bottom: 1px dashed #FFF; }
+.Modal.Bg .ModalBox .ModalContent{ margin-top: 20px; }
+.Modal.Bg .ModalBox .ModalContent .avatar{ width: 128px; height: 220px; margin: 15px 0 0 -25px; float: left; }
+
+.Modal.Bg .ModalBox .ModalContent form{ width: calc(100% - 105px); float: right; }
+.Modal.Bg .ModalBox .ModalContent form .invalid-feedback{ color: #FFF; }
+
+.Modal.Bg .ModalBox .ModalContent div.input,
+.Modal.Bg .ModalBox .ModalContent input,
+.Modal.Bg .ModalBox .ModalContent select,
+.Modal.Bg .ModalBox .ModalContent textarea{
+	height: 50px;
+	background-color: #Fff;
+	font-size: 12px;
+	line-height: 50px;
+	border-radius: 36px;
+}
+
+.Modal .ModalBox .ModalContent button[type="submit"]{
+	height: 50px;
+	padding: 0 13px;
+	background-color: white;
+	box-shadow: 0 1px 1px rgba(0,0,0,.2);
+	font-size: 12px;
+	color: #262626;
+	float: right;
+}
+
+@media screen and (max-width: 870px){
+
+	.Modal{
+		padding: 0px;
+		background-color: #FFF;
+	}
+
+	.Modal .ModalBox,
+	.Modal .ModalBox.ModalBoxBig,
+	.Modal .ModalBox.ModalBoxSmall{
+		width: 100%;
+		margin: 0;
+		border-radius: 0;
+	}
+
+}
+
+@media screen and (max-width: 950px){
+	.Modal .ModalContent.bc3 .box,
+	.Modal .ModalContent.bc3 .box:nth-child(3n+3),
+	.Modal .ModalContent.bc3 .box:nth-child(3){
+		width: calc((100% - 8px) / 2);
+		margin: 8px 8px 0 0;
+	}
+	.Modal .ModalContent.bc3 .box:nth-child(2n+2){ margin-right: 0; }
+	.Modal .ModalContent.bc3 .box:nth-child(1),
+	.Modal .ModalContent.bc3 .box:nth-child(2){
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.Modal .ModalContent.bc3 .box,
+	.Modal .ModalContent.bc3 .box:nth-child(3n+3),
+	.Modal .ModalContent.bc3 .box:nth-child(2n+2),
+	.Modal .ModalContent.bc3 .box:nth-child(3),
+	.Modal .ModalContent.bc3 .box:nth-child(2),
+	.Modal .ModalContent.bc3 .box:nth-child(1){
+		width: 100%; margin: 8px 0 0 0;
+	}
+	.Modal .ModalContent.bc3 .box:first-of-type{ margin-top: 0; }
+}

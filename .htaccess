@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteBase /
+RewriteRule ^ajaxHomeN/([a-zA-Z-_]+)/?$ src/ajaxHome.php?ajax=$1 [NC,L]
+RewriteRule ^widgets/([a-zA-Z-_]+)/([a-z0-9.-_]+)/?$ img/widgets/$1/$2 [NC,L]
